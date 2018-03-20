@@ -18,7 +18,11 @@ namespace netcoreapp
         }
 
         public static IWebHost BuildWebHost(string[] args) =>
-            WebHost.CreateDefaultBuilder(args)
+            WebHost.CreateDefaultBuilder(args)                
+                .UseKestrel()
+                .UseContentRoot(Directory.GetCurrentDirectory())
+                .UseUrls("http://node23.codenvy.io:5000")
+                .UseIISIntegration()
                 .UseStartup<Startup>()
                 .Build();
     }
