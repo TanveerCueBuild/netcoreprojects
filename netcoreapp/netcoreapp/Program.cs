@@ -21,7 +21,7 @@ namespace netcoreapp
             WebHost.CreateDefaultBuilder(args)                
                 .UseKestrel()
                 .UseContentRoot(Directory.GetCurrentDirectory())
-                .UseUrls("http://node29.codenvy.io:34558")
+                .UseUrls("http://node29.codenvy.io:34558", "http://node29.codenvy.io:5000", "http://0.0.0.0:5000")
                 .UseIISIntegration()
                 .UseStartup<Startup>()
                 .Build();
